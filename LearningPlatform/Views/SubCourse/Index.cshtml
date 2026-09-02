@@ -1,0 +1,150 @@
+﻿@model List<LearningPlatform.Models.SubCourseViewModel>
+
+<h2>Sub Course</h2>
+
+<button type="button" onclick="openAddModal()">Add Sub Course</button>
+
+<br />
+<br />
+
+<table border="1" cellpadding="8" id="subCourseTable">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Master Course</th>
+            <th>Sub Course</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Created By</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.MasterCourseName</td>
+                <td>@item.SubCourseName</td>
+                <td>@item.Amount</td>
+                <td>@(item.Status ? "Active" : "Inactive")</td>
+                <td>@item.CreatedAt</td>
+                <td>@item.CreatedBy</td>
+                <td>
+                    <button onclick="editSubCourse(@item.Id)">Edit</button>
+                    <button onclick="deleteSubCourse(@item.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Simple Modal -->
+<div id="subCourseModal" style="display:none; position:fixed; top:20%; left:35%; width:400px; padding:20px; background:white; border:1px solid black;">
+
+    <h3 id="modalTitle">Add Sub Course</h3>
+
+    <form id="subCourseForm">
+        <input type="hidden" id="Id" name="Id" />
+
+        <label>Master Course</label><br />
+        <select id="MasterCourseId" name="MasterCourseId">
+            @foreach (var m in (SelectList)ViewBag.MasterCourseList)
+            {
+                <option value="@m.Value">@m.Text</option>
+            }
+        </select><br /><br />
+
+        <label>Sub Course</label><br />
+        <input type="text" id="SubCourseName" name="SubCourseName" required /><br /><br />
+
+        <label>Amount</label><br />
+        <input type="number" step="0.01" id="Amount" name="Amount" required /><br /><br />
+
+        <label>Status</label><br />
+        <select id="Status" name="Status">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+        </select><br /><br />
+
+        <button type="button" onclick="saveSubCourse()">Add</button>
+        <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+</div>
+
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@section Scripts {
+    <script>
+
+        function openAddModal() {
+            document.getElementById("modalTitle").innerText = "Add Sub Course";
+            document.getElementById("subCourseForm").reset();
+            document.getElementById("Id").value = "";
+            document.getElementById("subCourseModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("subCourseModal").style.display = "none";
+        }
+
+        function saveSubCourse() {
+            var id = document.getElementById("Id").value;
+            var url = id ? "/SubCourse/Update" : "/SubCourse/Add";
+
+            var data = {
+                Id: id,
+                MasterCourseId: document.getElementById("MasterCourseId").value,
+                SubCourseName: document.getElementById("SubCourseName").value,
+                Amount: document.getElementById("Amount").value,
+                Status: document.getElementById("Status").value
+            };
+
+            fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(data)
+            })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        alert("Saved successfully!");
+                        location.reload();
+                    } else {
+                        alert("Something went wrong.");
+                    }
+                });
+        }
+
+        function editSubCourse(id) {
+            fetch("/SubCourse/GetById?id=" + id)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("modalTitle").innerText = "Edit Sub Course";
+                    document.getElementById("Id").value = data.id;
+                    document.getElementById("MasterCourseId").value = data.masterCourseId;
+                    document.getElementById("SubCourseName").value = data.subCourseName;
+                    document.getElementById("Amount").value = data.amount;
+                    document.getElementById("Status").value = data.status;
+                    document.getElementById("subCourseModal").style.display = "block";
+                });
+        }
+
+        function deleteSubCourse(id) {
+            if (confirm("Are you sure you want to delete this sub course?")) {
+                fetch("/SubCourse/Delete?id=" + id, {
+                    method: "POST"
+                })
+                    .then(response => response.json())
+                    .then(result => {
+                        if (result.success) {
+                            alert("Deleted successfully!");
+                            location.reload();
+                        }
+                    });
+            }
+        }
+
+    </script>
+}

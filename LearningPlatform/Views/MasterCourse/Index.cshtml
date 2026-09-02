@@ -1,5 +1,132 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<LearningPlatform.Models.MasterCourse>
+
+<h2>Master Course</h2>
+
+<button type="button" onclick="openAddModal()">Add Master Course</button>
+
+<br />
+<br />
+
+<table border="1" cellpadding="8" id="courseTable">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Master Course</th>
+            <th>Status</th>
+            <th>Created At</th>
+            <th>Created By</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.CourseName</td>
+                <td>@(item.Status ? "Active" : "Inactive")</td>
+                <td>@item.CreatedAt</td>
+                <td>@item.CreatedBy</td>
+                <td>
+                    <button onclick="editCourse(@item.Id)">Edit</button>
+                    <button onclick="deleteCourse(@item.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Simple Modal (plain HTML, no Bootstrap needed for now) -->
+<div id="courseModal" style="display:none; position:fixed; top:20%; left:35%; width:400px; padding:20px; background:white; border:1px solid black;">
+
+    <h3 id="modalTitle">Add Master Course</h3>
+
+    <form id="courseForm">
+        <input type="hidden" id="Id" name="Id" />
+
+        <label>Master Course</label><br />
+        <input type="text" id="CourseName" name="CourseName" required /><br /><br />
+
+        <label>Status</label><br />
+        <select id="Status" name="Status">
+            <option value="true">Active</option>
+            <option value="false">Inactive</option>
+        </select><br /><br />
+
+        <label>Thumbnail</label><br />
+        <input type="file" id="thumbnail" name="thumbnail" /><br /><br />
+
+        <button type="button" onclick="saveCourse()">Add</button>
+        <button type="button" onclick="closeModal()">Cancel</button>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+
+        // Open modal for Add
+        function openAddModal() {
+            document.getElementById("modalTitle").innerText = "Add Master Course";
+            document.getElementById("courseForm").reset();
+            document.getElementById("Id").value = "";
+            document.getElementById("courseModal").style.display = "block";
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById("courseModal").style.display = "none";
+        }
+
+        // Save (Add or Update depending on Id)
+        function saveCourse() {
+            var id = document.getElementById("Id").value;
+            var url = id ? "/MasterCourse/Update" : "/MasterCourse/Add";
+
+            var formData = new FormData(document.getElementById("courseForm"));
+
+            fetch(url, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert("Saved successfully!");
+                    location.reload();
+                } else {
+                    alert("Something went wrong.");
+                }
+            });
+        }
+
+        // Open modal for Edit and fill data
+        function editCourse(id) {
+            fetch("/MasterCourse/GetById?id=" + id)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("modalTitle").innerText = "Edit Master Course";
+                    document.getElementById("Id").value = data.id;
+                    document.getElementById("CourseName").value = data.courseName;
+                    document.getElementById("Status").value = data.status;
+                    document.getElementById("courseModal").style.display = "block";
+                });
+        }
+
+        // Delete course
+        function deleteCourse(id) {
+            if (confirm("Are you sure you want to delete this course?")) {
+                fetch("/MasterCourse/Delete?id=" + id, {
+                    method: "POST"
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Deleted successfully!");
+                        location.reload();
+                    }
+                });
+            }
+        }
+
+    </script>
 }
