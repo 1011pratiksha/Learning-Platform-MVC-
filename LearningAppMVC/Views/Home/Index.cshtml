@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@{
+    Html.BeginForm("Index", "Home");
+}
+
+
+<h1>Add Subscription</h1>
+
+@Html.Label("Subscription Name") &nbsp;@Html.TextBox("name")
+@Html.ValidationMessage("name")
+<br />
+<br />
+@Html.Label("Master Course Name") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Demo1", "Demo2" }), "Select Master Course")
+<br />
+<br />
+@Html.Label("Sub Course") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Demo1", "Demo2" }), "Select Sub Course")
+<br />
+<br />
+@Html.Label("Amount") &nbsp;@Html.TextBox("Amount")
+@Html.ValidationMessage("Amount")
+<br />
+<br />
+@*@Html.Label("Status")  &nbsp;
+    @Html.Label("Active")@Html.RadioButton("Status","Active")
+    @Html.Label("Inactive")@Html.RadioButton("Status","InActive")<br /><br />*@
+@Html.Label("Status") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Active", "Inactive" }), "Select Staus")
+<br />
+<br />
+@Html.Label("Thumbnail") &nbsp;<input type="file" />
+<br />
+<br />
+<input type="submit" value="Add" />
+@Html.Raw(@ViewData["SussessMessage"])
+
+
+
+@{
+    Html.EndForm();
+}
+
