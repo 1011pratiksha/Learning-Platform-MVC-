@@ -1,36 +1,89 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LearningAppMVC.Models;
 
 namespace LearningAppMVC.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
+
+        SubscriptionContectcs db = new SubscriptionContectcs();
+        // GET: Grid
         public ActionResult Index()
         {
+            var data = db.Subscriptions.ToList();
+            return View(data);
+        }
+        public ActionResult Modal()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Modal(Subscriptions s)
+        {
+            if (ModelState.IsValid == true)
+            {
+                db.Subscriptions.Add(s);
+                int a = db.SaveChanges();
+                if (a > 0)
+                {
+                    // TempData["InsertMessage"] = "<script>alert('Data Inserted')</script>";
+                    TempData["InsertMessage"] = "Data Inserted";
+                    //ModelState.Clear();
+                    return RedirectToAction("Index");
+                }
+            }
+            return View(s);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var row = db.Subscriptions.Where(model => model.sub_id == id).FirstOrDefault();
+            return View(row);
+        }
+        [HttpPost]
+        public ActionResult Edit(Subscriptions s)
+        {
+            if (ModelState.IsValid == true)
+            {
+                db.Entry(s).State = EntityState.Modified;
+                int a = db.SaveChanges();
+                if (a > 0)
+                {
+                    //ViewBag.UpdateMessage = "<script>alert('Data Updated')</script>";
+                    TempData["UpdatetMessage"] = "Data Updated";
+                    //ModelState.Clear();
+                    return RedirectToAction("Index");
+                }
+            }
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Index(string name,string amount )
+        public ActionResult Delete(int id)
         {
-            if (name == "")
+            var SubIdRow = db.Subscriptions.Where(model => model.sub_id == id).FirstOrDefault();
+            return View(SubIdRow);
+        }
+        [HttpPost]
+        public ActionResult Delete(Subscriptions s)
+        {
+            if (ModelState.IsValid == true)
             {
-                ModelState.AddModelError("Name", "Please Entre Subscription Name");
-            }
-            if (amount == "")
-            {
-                ModelState.AddModelError("amount", "Please Entre Amount");
-            }
-            if(ModelState.IsValid == true)
-            {
-                ViewData["SussessMessage"] = "<script> alert('Form Submited')</script>";
-                ModelState.Clear();
+                db.Entry(s).State = EntityState.Deleted;
+                int a = db.SaveChanges();
+                if (a > 0)
+                {
+                    //ViewBag.DeleteMessage = "<script>alert('Data Deleted')</script>";
+                    TempData["DeleteMessage"] = "Data Deleted";
+                    //ModelState.Clear();
+                }
+                return RedirectToAction("Index");
             }
             return View();
-        }
+        }  
     }
 }

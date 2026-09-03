@@ -1,0 +1,29 @@
+﻿@model LearningAppMVC.Models.Subscriptions
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h1>Delete Subscription</h1>
+
+@{
+    Html.BeginForm("Delete", "Home");
+}
+
+<h3>Are You Sure You Want To Delete</h3>
+
+@Html.Raw(ViewBag.DeleteMessage)
+
+@Html.HiddenFor(x => x.sub_id)
+@Html.Label("Subscription Name") &nbsp;@Html.TextBoxFor(x => x.sub_type)
+
+<br />
+<input type="submit" value="Delete" />
+<br />
+<br />
+@Html.ActionLink("Back To List", "Index")
+
+
+
+@{
+    Html.EndForm();
+}

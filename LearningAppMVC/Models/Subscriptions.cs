@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +8,7 @@ namespace LearningAppMVC.Models
 {
     public class Subscriptions
     {
+        [Key]
         public int sub_id { get; set; }
         public string sub_type { get; set; }
         public int mid { get; set; }

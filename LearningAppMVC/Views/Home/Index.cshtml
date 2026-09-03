@@ -1,45 +1,49 @@
-﻿
+﻿@model IEnumerable<LearningAppMVC.Models.Subscriptions>
 @{
     ViewBag.Title = "Index";
 }
 
-
-@{
-    Html.BeginForm("Index", "Home");
-}
-
-
 <h1>Add Subscription</h1>
 
-@Html.Label("Subscription Name") &nbsp;@Html.TextBox("name")
-@Html.ValidationMessage("name")
-<br />
-<br />
-@Html.Label("Master Course Name") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Demo1", "Demo2" }), "Select Master Course")
-<br />
-<br />
-@Html.Label("Sub Course") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Demo1", "Demo2" }), "Select Sub Course")
-<br />
-<br />
-@Html.Label("Amount") &nbsp;@Html.TextBox("Amount")
-@Html.ValidationMessage("Amount")
-<br />
-<br />
-@*@Html.Label("Status")  &nbsp;
-    @Html.Label("Active")@Html.RadioButton("Status","Active")
-    @Html.Label("Inactive")@Html.RadioButton("Status","InActive")<br /><br />*@
-@Html.Label("Status") &nbsp;@Html.DropDownList("StatusList", new SelectList(new[] { "Active", "Inactive" }), "Select Staus")
-<br />
-<br />
-@Html.Label("Thumbnail") &nbsp;<input type="file" />
-<br />
-<br />
-<input type="submit" value="Add" />
-@Html.Raw(@ViewData["SussessMessage"])
+@*@Html.Raw(TempData["InsertMessage"])*@
 
+<p style="color:green;">@TempData["InsertMessage"]</p>
+<p style="color:green;">@TempData["UpdatetMessage"]</p>
+<p style="color:green;">@TempData["DeleteMessage"]</p>
 
+@Html.ActionLink("Create New", "Modal")
 
-@{
-    Html.EndForm();
-}
+<table border="2">
+    <tr>
+        <th>ID</th>
+        <th>Sub Type</th>
+        <th>Master Course</th>
+        <th>Sub Master Course</th>
+        <th>Sub Amount</th>
+        <th>status</th>
+        <th>Thumbnail</th>
+        <th>Action</th>
 
+    </tr>
+    @{
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.sub_id</td>
+                <td>@item.sub_type</td>
+                <td>@item.mid</td>
+                <td>@item.sid</td>
+                <td>@item.sub_amount</td>
+                <td>@item.subStatus</td>
+                <td>@item.subThumbnail</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.sub_id })
+                    |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.sub_id })
+                </td>
+
+            </tr>
+        }
+    }
+
+</table>
