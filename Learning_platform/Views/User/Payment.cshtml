@@ -1,0 +1,26 @@
+﻿<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+
+    var options = {
+        "key": "@ViewBag.KeyId",
+        "amount": @ViewBag.Amount,
+        "currency": "INR",
+        "name": "Learning Platform",
+        "description": "Course Purchase",
+        "order_id": "@ViewBag.OrderId",
+
+        "handler": function (response) {
+            alert("Payment successful!");
+        },
+
+        "theme": {
+            "color": "#0d6efd"
+        }
+    };
+
+    var razorpay = new Razorpay(options);
+
+    razorpay.open();
+
+</script>

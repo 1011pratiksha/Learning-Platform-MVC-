@@ -11,12 +11,13 @@ namespace Learning_platform.Models
         public int UserId { get; set; }
 
         [Column("user_name")]
-        public string UserName { get; set; } = string.Empty;
+        public string UserName { get; set; }
 
         [Column("user_email")]
-        public string UserEmail { get; set; } = string.Empty;
+        public string UserEmail { get; set; } 
 
         [Column("user_password")]
-        public string UserPassword { get; set; } = string.Empty;
-   
+        public string UserPassword { get; set; }
+
+    }
 }

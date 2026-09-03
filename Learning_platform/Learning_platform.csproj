@@ -1,9 +1,45 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\051588c5-4266-45b5-845d-8444b3b996b2.jpg" Link="wwwroot\uploads\051588c5-4266-45b5-845d-8444b3b996b2.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\07609e5c-e5eb-4024-b302-400b3162727c.jpg" Link="wwwroot\uploads\07609e5c-e5eb-4024-b302-400b3162727c.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\277b30e7-f85f-4c29-ae43-ec861f3e93d7.jpg" Link="wwwroot\uploads\277b30e7-f85f-4c29-ae43-ec861f3e93d7.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\30259029-1095-44ad-8d68-c3fe9c6903d1.png" Link="wwwroot\uploads\30259029-1095-44ad-8d68-c3fe9c6903d1.png" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\33d3c572-5982-4af7-a0aa-1ed6a13d923a.jpg" Link="wwwroot\uploads\33d3c572-5982-4af7-a0aa-1ed6a13d923a.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\5e6d5729-deb9-4cc5-ada9-75efc20a2044.jfif" Link="wwwroot\uploads\5e6d5729-deb9-4cc5-ada9-75efc20a2044.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\66851891-5d7a-48d2-aa32-6d391ca75300.jpg" Link="wwwroot\uploads\66851891-5d7a-48d2-aa32-6d391ca75300.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\6f0f2876-10e0-473f-beb9-b959dea6ae86.jfif" Link="wwwroot\uploads\6f0f2876-10e0-473f-beb9-b959dea6ae86.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\6fd03e90-f1d6-419f-af6d-3ef041d2921c.jfif" Link="wwwroot\uploads\6fd03e90-f1d6-419f-af6d-3ef041d2921c.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\75aceb86-1903-4827-bbd9-1d471dc10518.jfif" Link="wwwroot\uploads\75aceb86-1903-4827-bbd9-1d471dc10518.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\7aab7bd1-1445-49c8-9733-1171e4c8cca0.png" Link="wwwroot\uploads\7aab7bd1-1445-49c8-9733-1171e4c8cca0.png" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\8ca307c5-838a-4af0-92a4-83d987f19c9f.jfif" Link="wwwroot\uploads\8ca307c5-838a-4af0-92a4-83d987f19c9f.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\a6dd5f1f-52cc-4059-94e1-59831db0576d.jpg" Link="wwwroot\uploads\a6dd5f1f-52cc-4059-94e1-59831db0576d.jpg" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\b816b3fc-6831-4765-bb17-bbcc6154273c.gif" Link="wwwroot\uploads\b816b3fc-6831-4765-bb17-bbcc6154273c.gif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\c192a321-c961-4b05-b58f-d4f88519036a.jfif" Link="wwwroot\uploads\c192a321-c961-4b05-b58f-d4f88519036a.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\d563ac39-b34b-47d6-bf5a-de56b5544038.jfif" Link="wwwroot\uploads\d563ac39-b34b-47d6-bf5a-de56b5544038.jfif" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\d8f24435-5f5a-4be2-a7da-03c1d2a9da54.png" Link="wwwroot\uploads\d8f24435-5f5a-4be2-a7da-03c1d2a9da54.png" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\f17c33e6-4446-45aa-b78f-0c203bc873ce.png" Link="wwwroot\uploads\f17c33e6-4446-45aa-b78f-0c203bc873ce.png" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\f64376b9-b67d-40ba-9584-29a173c0d608.png" Link="wwwroot\uploads\f64376b9-b67d-40ba-9584-29a173c0d608.png" />
+    <Content Include="..\..\..\..\Downloads\LearningPlatform\LearningPlatform\LearningPlatform\wwwroot\uploads\fef4c2c4-adb9-4ac6-9658-07a1b09d6b73.jpg" Link="wwwroot\uploads\fef4c2c4-adb9-4ac6-9658-07a1b09d6b73.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Razorpay" Version="3.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\" />
+  </ItemGroup>
 
 </Project>
