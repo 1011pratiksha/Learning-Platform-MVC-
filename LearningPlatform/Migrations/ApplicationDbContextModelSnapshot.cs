@@ -45,8 +45,9 @@ namespace LearningPlatform.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("createdBy");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit")
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("mstatus");
 
                     b.Property<string>("ThumbnailPath")
@@ -85,8 +86,9 @@ namespace LearningPlatform.Migrations
                         .HasColumnType("int")
                         .HasColumnName("mid");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit")
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("sstatus");
 
                     b.Property<string>("SubCourseName")

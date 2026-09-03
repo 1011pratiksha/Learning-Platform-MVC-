@@ -18,7 +18,7 @@ namespace LearningPlatform.Migrations
                     mid = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     mname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    mstatus = table.Column<bool>(type: "bit", nullable: false),
+                    mstatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mthumbnail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     createdAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     createdBy = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -36,7 +36,7 @@ namespace LearningPlatform.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     mid = table.Column<int>(type: "int", nullable: false),
                     sname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    sstatus = table.Column<bool>(type: "bit", nullable: false),
+                    sstatus = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     samount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     createdAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     createdBy = table.Column<string>(type: "nvarchar(max)", nullable: false)

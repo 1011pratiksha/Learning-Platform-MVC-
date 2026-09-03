@@ -17,7 +17,7 @@ namespace LearningPlatform.Models
         public string SubCourseName { get; set; }
 
         [Column("sstatus")]
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
         [Column("samount", TypeName = "decimal(18,2)")]
         public decimal Amount { get; set; }

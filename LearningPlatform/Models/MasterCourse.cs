@@ -14,7 +14,7 @@ namespace LearningPlatform.Models
         public string CourseName { get; set; }
 
         [Column("mstatus")]
-        public bool Status { get; set; }
+        public string Status { get; set; }
 
         [Column("mthumbnail")]
         public string ThumbnailPath { get; set; }

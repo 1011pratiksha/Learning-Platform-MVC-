@@ -1,8 +1,8 @@
 ﻿using LearningPlatform.Data;
 using LearningPlatform.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
@@ -20,21 +20,12 @@ namespace LearningPlatform.Controllers
         public IActionResult Index()
         {
             var allSubCourses = _context.SubCourses
-                .Select(s => new SubCourseViewModel
-                {
-                    Id = s.Id,
-                    SubCourseName = s.SubCourseName,
-                    Amount = s.Amount,
-                    Status = s.Status,
-                    CreatedAt = s.CreatedAt,
-                    CreatedBy = s.CreatedBy,
-                    MasterCourseName = s.MasterCourse.CourseName
-                })
+                .Include(s => s.MasterCourse)
                 .OrderByDescending(s => s.CreatedAt)
                 .ToList();
 
             ViewBag.MasterCourseList = new SelectList(
-                _context.MasterCourses.Where(m => m.Status == true).ToList(),
+                _context.MasterCourses.Where(m => m.Status == "Active").ToList(),
                 "Id",
                 "CourseName"
             );
