@@ -1,0 +1,315 @@
+Sure. Here is the complete content for **`css-basics.pdf`**.
+
+# CSS Basics – Assignment
+
+## Objective
+
+This assignment introduces the fundamentals of CSS, including selectors, colors, fonts, spacing, borders, backgrounds, the box model, positioning, Flexbox, and responsive design.
+
+---
+
+# Part A – Short Answer Questions
+
+1. What is CSS and what does CSS stand for?
+
+2. What are the advantages of using CSS in a webpage?
+
+3. Explain the three ways of applying CSS:
+
+   * Inline CSS
+   * Internal CSS
+   * External CSS
+
+4. What is a CSS selector? Explain with an example.
+
+5. Explain the difference between `id` and `class` selectors.
+
+6. What is the difference between `margin` and `padding`?
+
+7. What is the CSS Box Model?
+
+8. Explain the following CSS properties:
+
+   * `color`
+   * `background-color`
+   * `font-size`
+   * `font-family`
+   * `text-align`
+
+9. What is the difference between `border` and `outline`?
+
+10. What is the purpose of the `display` property in CSS?
+
+---
+
+# Part B – Descriptive Questions
+
+### 11. Explain CSS Selectors
+
+Explain the following selectors with suitable examples:
+
+* Element selector
+* Class selector
+* ID selector
+* Universal selector
+* Group selector
+* Descendant selector
+
+---
+
+### 12. Explain CSS Box Model
+
+Explain the four main components of the CSS Box Model:
+
+* Content
+* Padding
+* Border
+* Margin
+
+Draw or describe a simple box-model diagram.
+
+---
+
+### 13. Explain CSS Colors and Backgrounds
+
+Explain how CSS can be used to set:
+
+* Text color
+* Background color
+* Background image
+* Background position
+* Background size
+* Background repeat
+
+---
+
+### 14. Explain CSS Fonts and Text
+
+Explain the following properties:
+
+* `font-family`
+* `font-size`
+* `font-weight`
+* `font-style`
+* `text-align`
+* `text-decoration`
+* `line-height`
+* `letter-spacing`
+
+---
+
+### 15. Explain CSS Positioning
+
+Explain the following CSS position values:
+
+* `static`
+* `relative`
+* `absolute`
+* `fixed`
+* `sticky`
+
+Give a suitable example for each.
+
+---
+
+# Part C – Practical Tasks
+
+### 16. Style a Basic HTML Page
+
+Create an HTML webpage and apply CSS to:
+
+* Change the page background color
+* Change heading color
+* Change paragraph font size
+* Change font family
+* Align the heading to the center
+* Add spacing around paragraphs
+
+---
+
+### 17. Create a Styled Navigation Bar
+
+Create a horizontal navigation bar containing:
+
+* Home
+* About
+* Services
+* Contact
+
+Use CSS to:
+
+* Remove default list styling
+* Add background color
+* Add padding
+* Add spacing between links
+* Change the link color
+* Add a hover effect
+
+---
+
+### 18. Create a Profile Card
+
+Create a profile card containing:
+
+* Profile image
+* Name
+* Job title
+* Short description
+* "View Profile" button
+
+Use CSS to add:
+
+* Border
+* Border radius
+* Padding
+* Margin
+* Shadow
+* Button styling
+* Hover effect
+
+---
+
+### 19. Create a Student Table
+
+Create an HTML table containing:
+
+| Student Name | Subject    | Marks | Grade |
+| ------------ | ---------- | ----: | ----- |
+| Rahul        | HTML       |    85 | A     |
+| Priya        | CSS        |    78 | B     |
+| Amit         | JavaScript |    92 | A+    |
+| Sneha        | HTML       |    88 | A     |
+| Rohit        | CSS        |    72 | B     |
+
+Use CSS to:
+
+* Add borders
+* Add padding
+* Style the table header
+* Center the text
+* Add alternate row colors
+* Add a hover effect
+
+---
+
+### 20. Create a Login Form
+
+Create a login form containing:
+
+* Email
+* Password
+* Remember Me checkbox
+* Login button
+
+Use CSS to style:
+
+* Form container
+* Input fields
+* Labels
+* Button
+* Background
+* Borders
+* Focus effect
+
+---
+
+# Part D – Flexbox
+
+### 21. Create a Flexbox Layout
+
+Create three boxes containing:
+
+* HTML
+* CSS
+* JavaScript
+
+Use CSS Flexbox to:
+
+* Display the boxes horizontally
+* Add equal spacing
+* Center the boxes
+* Add padding
+* Add borders
+* Add hover effects
+
+---
+
+### 22. Create a Responsive Card Layout
+
+Create four cards using Flexbox.
+
+The cards should automatically adjust their position based on the screen width.
+
+Use:
+
+```css
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+```
+
+---
+
+# Part E – CSS Practical Challenge
+
+### 23. Create a Simple Webpage
+
+Create a complete webpage for a **Student Learning Portal**.
+
+The webpage should contain:
+
+* Header
+* Navigation bar
+* Main heading
+* Introduction paragraph
+* Three course cards
+* Student registration button
+* Footer
+
+Apply CSS for:
+
+* Colors
+* Fonts
+* Spacing
+* Borders
+* Border radius
+* Box shadows
+* Hover effects
+* Flexbox layout
+
+---
+
+## Submission Requirements
+
+1. Use valid HTML5 and CSS3.
+2. Keep HTML and CSS in separate files for external CSS tasks.
+3. Use meaningful class and ID names.
+4. Format and indent the code properly.
+5. Test the webpages in a modern browser.
+6. Submit the HTML and CSS source code.
+7. Include screenshots of the output.
+8. Make sure the webpage works on different screen sizes.
+
+---
+
+## Topics Covered
+
+* Introduction to CSS
+* CSS Syntax
+* Inline, Internal and External CSS
+* CSS Selectors
+* Colors
+* Backgrounds
+* Fonts
+* Text Styling
+* Borders
+* Margin and Padding
+* CSS Box Model
+* Display Property
+* Positioning
+* Hover Effects
+* Forms
+* Tables
+* Flexbox
+* Responsive Layouts

@@ -1,0 +1,199 @@
+Sure. Here is the complete content you can put into **`html-basics.pdf`**.
+
+# HTML Basics – Assignment
+
+## Objective
+
+This assignment introduces the fundamentals of HTML, including document structure, text formatting, hyperlinks, images, lists, tables, forms, and semantic HTML.
+
+---
+
+## Part A – Short Answer Questions
+
+1. What is HTML and what does HTML stand for?
+
+2. Explain the basic structure of an HTML document.
+
+3. What are HTML elements and attributes?
+
+4. Explain the purpose of the `<html>`, `<head>`, and `<body>` elements.
+
+5. What is the purpose of heading tags in HTML? Explain `<h1>` to `<h6>`.
+
+6. What is the use of the `<p>` tag?
+
+7. What is the purpose of the `<a>` (anchor) tag?
+
+8. How do you add an image to an HTML webpage?
+
+9. Explain the difference between ordered and unordered lists.
+
+10. What are the `<table>`, `<tr>`, `<th>`, and `<td>` tags used for?
+
+---
+
+## Part B – Descriptive Questions
+
+### 11. Explain the Basic Structure of HTML
+
+Explain the purpose of the following:
+
+* `<!DOCTYPE html>`
+* `<html>`
+* `<head>`
+* `<title>`
+* `<body>`
+
+### 12. Explain HTML Attributes
+
+What are attributes in HTML? Explain the following attributes with examples:
+
+* `id`
+* `class`
+* `href`
+* `src`
+* `alt`
+* `title`
+
+### 13. Explain HTML Links
+
+Explain how hyperlinks are created using the `<a>` tag. Also explain how to open a link in a new browser tab.
+
+### 14. Explain HTML Lists
+
+Explain:
+
+* Ordered list `<ol>`
+* Unordered list `<ul>`
+* List item `<li>`
+
+Create one example of each.
+
+### 15. Explain HTML Tables
+
+Explain the purpose of:
+
+* `<table>`
+* `<tr>`
+* `<th>`
+* `<td>`
+
+Create a simple table containing student names, subjects, and marks.
+
+---
+
+# Part C – Practical Tasks
+
+### 16. Create a Basic HTML Page
+
+Create an HTML webpage containing:
+
+* Page title
+* Main heading
+* Two paragraphs
+* Bold text
+* Italic text
+* Horizontal line
+
+---
+
+### 17. Create Lists
+
+Create a webpage containing:
+
+**Ordered List:**
+Five programming languages.
+
+**Unordered List:**
+Five web technologies.
+
+---
+
+### 18. Create Links and Images
+
+Create a webpage containing:
+
+* One image
+* Three hyperlinks
+* One hyperlink that opens in a new browser tab
+
+---
+
+### 19. Create a Student Marks Table
+
+Create a table with the following columns:
+
+| Student Name | Subject    | Marks | Grade |
+| ------------ | ---------- | ----: | ----- |
+| Rahul        | HTML       |    85 | A     |
+| Priya        | CSS        |    78 | B     |
+| Amit         | JavaScript |    92 | A+    |
+| Sneha        | HTML       |    88 | A     |
+| Rohit        | CSS        |    72 | B     |
+
+---
+
+### 20. Create a Student Registration Form
+
+Create an HTML form containing:
+
+* Student Name
+* Email
+* Password
+* Date of Birth
+* Gender using radio buttons
+* Skills using checkboxes
+* Course using a dropdown list
+* Address using textarea
+* Submit button
+* Reset button
+
+---
+
+## Part D – Semantic HTML
+
+### 21. Create a Semantic HTML Webpage
+
+Create a webpage using the following semantic elements:
+
+```html
+<header>
+<nav>
+<main>
+<section>
+<article>
+<footer>
+```
+
+The webpage should represent a simple educational website.
+
+---
+
+# Submission Requirements
+
+1. Use valid **HTML5** syntax.
+2. Include `<!DOCTYPE html>` in every HTML page.
+3. Format and indent your HTML code properly.
+4. Use meaningful element and attribute names.
+5. Test all webpages in a modern browser.
+6. Submit the HTML source code.
+7. Include screenshots of the output for practical tasks.
+8. Keep images and other supporting files in an organized folder.
+
+---
+
+## Topics Covered
+
+* HTML Introduction
+* HTML Document Structure
+* Headings and Paragraphs
+* Text Formatting
+* HTML Attributes
+* Hyperlinks
+* Images
+* Ordered and Unordered Lists
+* Tables
+* Forms
+* Form Controls
+* Semantic HTML
+* Basic HTML5 Structure
