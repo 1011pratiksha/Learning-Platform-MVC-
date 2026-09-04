@@ -1,0 +1,8 @@
+EmpWebFormMVC - remaining files
+
+These files follow the existing simple service/model style from the supplied project.
+
+Important SQL note:
+sp_FetchEventById currently does not return MasterEventId, but UpdateEvent needs it. The SQL file should be changed so the procedure selects e.MasterEventId too.
+
+Employee page uses existing RoleService and DepartmentService and the ManagerService included here. Designation dropdown is loaded from the existing designation fetch procedure.

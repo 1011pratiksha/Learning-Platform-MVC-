@@ -9,5 +9,16 @@ namespace LearningPlatform.Data
 
         public DbSet<MasterCourse> MasterCourses { get; set; }
         public DbSet<SubCourse> SubCourses { get; set; }
+
+        // Topic table.
+        public DbSet<Topic> Topics { get; set; }
+
+
+        // Material table.
+        public DbSet<Material> Materials { get; set; }
+
+
+        // MCQ table.
+        public DbSet<Mcq> Mcqs { get; set; }
     }
 }

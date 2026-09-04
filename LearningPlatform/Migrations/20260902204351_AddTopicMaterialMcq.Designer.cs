@@ -4,6 +4,7 @@ using LearningPlatform.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LearningPlatform.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260902204351_AddTopicMaterialMcq")]
+    partial class AddTopicMaterialMcq
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -110,38 +113,18 @@ namespace LearningPlatform.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("answer");
 
-                    b.Property<int>("MaterialId")
-                        .HasColumnType("int")
-                        .HasColumnName("material_id");
-
-                    b.Property<string>("Option1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("option1");
-
-                    b.Property<string>("Option2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("option2");
-
-                    b.Property<string>("Option3")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("option3");
-
-                    b.Property<string>("Option4")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("option4");
-
                     b.Property<string>("Question")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("question");
 
+                    b.Property<int>("TopicId")
+                        .HasColumnType("int")
+                        .HasColumnName("tid");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("MaterialId");
+                    b.HasIndex("TopicId");
 
                     b.ToTable("Mcq");
                 });
@@ -262,13 +245,13 @@ namespace LearningPlatform.Migrations
 
             modelBuilder.Entity("LearningPlatform.Models.Mcq", b =>
                 {
-                    b.HasOne("LearningPlatform.Models.Material", "Material")
+                    b.HasOne("LearningPlatform.Models.Topic", "Topic")
                         .WithMany("Mcqs")
-                        .HasForeignKey("MaterialId")
+                        .HasForeignKey("TopicId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Material");
+                    b.Navigation("Topic");
                 });
 
             modelBuilder.Entity("LearningPlatform.Models.SubCourse", b =>
@@ -306,14 +289,11 @@ namespace LearningPlatform.Migrations
                     b.Navigation("SubCourses");
                 });
 
-            modelBuilder.Entity("LearningPlatform.Models.Material", b =>
-                {
-                    b.Navigation("Mcqs");
-                });
-
             modelBuilder.Entity("LearningPlatform.Models.Topic", b =>
                 {
                     b.Navigation("Materials");
+
+                    b.Navigation("Mcqs");
                 });
 #pragma warning restore 612, 618
         }
