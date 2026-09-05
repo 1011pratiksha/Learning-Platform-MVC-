@@ -9,5 +9,9 @@ namespace LearningAppMVC.Models
     public class SubscriptionContectcs : DbContext
     {
         public DbSet<Subscriptions> Subscriptions { get;set;  }
+        public DbSet<MasterCourse> MasterCourses { get; set; }
+
+        public DbSet<SubCourse> SubCourses { get; set; }
+        public DbSet<SubscriptionSubCourse> SubscriptionSubCourses { get; set; }
     }
 }
